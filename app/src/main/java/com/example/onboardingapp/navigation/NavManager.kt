@@ -15,13 +15,19 @@ import com.example.onboardingapp.views.SplashScreen
 fun NavManager(){
     val context= LocalContext.current
     val dataStore= StoreBoarding(context)
-    val store=dataStore.getStoreBoarding.collectAsState(initial = true)
+    val store=
+        dataStore.
+        getStoreBoarding.
+        collectAsState(initial = true)
 
-    val navController= rememberNavController()
+    val navController=
+        rememberNavController()
     NavHost(navController=navController,
-        startDestination= if(store.value==true) "home" else "Splash")
+        startDestination= if(store.value==true)
+            "home" else "Splash")
     {
-        composable("onBoarding"){
+        composable("onBoarding")
+        {
             MainOnBoarding(navController,dataStore)
         }
         composable("home"){

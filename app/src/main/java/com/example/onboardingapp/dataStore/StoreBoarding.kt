@@ -11,11 +11,12 @@ import kotlinx.coroutines.flow.map
 
 class StoreBoarding(private val context: Context) {
     companion object{
-        private val Context.dataStore: DataStore<Preferences> by preferencesDataStore("storeBoarding")
+        private val Context.dataStore: DataStore<Preferences>
+        by preferencesDataStore("storeBoarding")
         val STORE_BOARD= booleanPreferencesKey("store_board")
     }
 
-    val getStoreBoarding: Flow<Boolean?> = context.dataStore.data
+    val getStoreBoarding: Flow<Boolean> = context.dataStore.data
         .map {
             preferences->
             preferences[STORE_BOARD]?:false

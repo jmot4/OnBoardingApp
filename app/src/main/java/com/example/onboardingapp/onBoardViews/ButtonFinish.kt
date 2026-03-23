@@ -17,7 +17,8 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 @Composable
-fun ButtonFinish(currentPage:Int,navController: NavController,store: StoreBoarding){
+fun ButtonFinish(currentPage:Int,navController: NavController,
+                 store: StoreBoarding){
     Row(modifier= Modifier
         .padding(bottom = 20.dp)
         .fillMaxWidth(),
